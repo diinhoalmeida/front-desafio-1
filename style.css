@@ -51,7 +51,7 @@ body {
     grid-gap: 20px;
 }
 .main img {
-    width: 730px;
+    width: min-content;
     height: 350px;
 }
 .main p {
@@ -103,15 +103,10 @@ body {
 /* ### ASIDE */
 .aside {
     grid-area: aside;
-    width: 380px;
-    height: min-content;
+    width: min-content;
+    height: max-content;
     background-color: white;
-    padding-left: 30px;
-}
-.aside img {
-    width: 340px;
-    height: 240px;
-    margin-bottom: 20px;
+    padding: 20px;
 }
 .aside h2 {
     font-style: normal;
@@ -120,17 +115,34 @@ body {
     line-height: 25px;
     border-left: solid 2px red;
     padding: 4px 5px;
+    margin: 20px 0;
 }
-.aside--foot {
-    margin-top: 35px;
+.aside--foot div {
+    width: 340px;
+    height: 240px;
+    margin-bottom: 20px; 
+    background-color: #F5F5F5; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;   
+}
+.aside--foot:last-child {
+    margin: 0;
+}
+.aside input {
+    all: unset;
+    border: solid gray 1px;
+    padding: 10px;
+    width: 315px;
 }
 /* ### OPTIONS */
 .options {
     display: flex;
     justify-content: space-between;
-    width: 21em;
     box-shadow: 0 2px 0 0 rgb(0, 0, 0, 0.2); 
     align-items: center;
+    
 }
 .options a,
 .options p {
@@ -139,6 +151,7 @@ body {
     font-size: 14px;
     line-height: 19px;
     text-decoration: none; 
+    color: black;
 }
 
 /* FOOTER */
@@ -155,27 +168,28 @@ body {
     background-color: #F5F5F5;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template: "comentarioh2 comentarioh2"
                     "nome email"
                     "comentario comentario"
+                    ". botao"
 
 }
-.main--foot-coments button,
-.main--foot-contato button {
+.main--foot-coments {
+    grid-area: botao;    
+}
+.main--foot-coments button {
+    all: unset;
     margin: 15px 20px 20px 20px;
     border: solid 1px pink;
     border-radius: 20px;
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     padding: 10px 20px 10px 20px;
-    position: relative;
-    left: 580px;
+    display: block;
+    margin-left: auto;
     background-color: #FE0078;
     color: white;
 }
-
 .abaComentario h2 {
     grid-area: comentarioh2;
 }
@@ -203,6 +217,6 @@ textarea:focus {
     grid-area: comentario;
 }
 .comentario textarea {
-    width: 99%;
-    height: 150px;
+    width: 724px;
+    height: 200px;
 }
